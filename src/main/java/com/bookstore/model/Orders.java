@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 
 public class Orders {
-    private String orderNo;
+    private String orderId;
     private String clientName;
     private String bookName;
     private String orderDate;
@@ -17,19 +17,17 @@ public class Orders {
 
     }
 
-    public Orders(String orderNo, String clientName, String bookName, String orderDate) {
-        this.orderNo = orderNo;
-        this.clientName = clientName;
-        this.bookName = bookName;
-        this.orderDate = orderDate;
+    public Orders(String orderId, String clientName, String bookName, String orderDate){
+        this.orderId=orderId;
+        this.clientName=clientName;
+        this.bookName=bookName;
+        this.orderDate=orderDate;
     }
 
-    public String getOrderNo() {
-        return orderNo;
-    }
+    public String getOrderId() { return orderId; }
 
-    public void setOrderNo(String orderNo) {
-        this.orderNo = orderNo;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public String getClientName() {

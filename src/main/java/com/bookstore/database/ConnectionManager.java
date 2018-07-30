@@ -3,8 +3,8 @@ package com.bookstore.database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-    public class ConnectionManager {
-        public Connection getNewConnection() throws Exception{
+public class ConnectionManager {
+     public Connection getNewConnection() throws Exception{
             Connection conn = null;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -17,7 +17,7 @@ import java.sql.DriverManager;
             return conn;
         }
 
-        public void closeConnection(Connection conn) throws Exception{
+     public void closeConnection(Connection conn) throws Exception{
             conn.close();
 
         }
