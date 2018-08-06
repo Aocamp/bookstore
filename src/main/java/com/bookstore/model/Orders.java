@@ -9,18 +9,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 public class Orders {
     private String orderId;
-    private String clientName;
-    private String bookName;
+    private String clientId;
+    private String bookId;
     private String orderDate;
 
     public Orders(){
 
     }
 
-    public Orders(String orderId, String clientName, String bookName, String orderDate){
+    public Orders(String orderId, String clientId, String bookId, String orderDate){
         this.orderId=orderId;
-        this.clientName=clientName;
-        this.bookName=bookName;
+        this.clientId=clientId;
+        this.bookId=bookId;
         this.orderDate=orderDate;
     }
 
@@ -30,20 +30,20 @@ public class Orders {
         this.orderId = orderId;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getClientId() {
+        return clientId;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
     }
 
-    public String getBookName() {
-        return bookName;
+    public String getBookId() {
+        return bookId;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
     }
 
     public String getOrderDate() {

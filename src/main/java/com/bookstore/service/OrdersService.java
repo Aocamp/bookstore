@@ -1,34 +1,26 @@
 package com.bookstore.service;
-import java.util.Date;
 import java.util.List;
 
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 import com.bookstore.database.OrdersDAO;
 import com.bookstore.model.Orders;
-import com.bookstore.model.OrdersModify;
 
 @Path("orders")
 public class OrdersService {
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public List<Orders> getAllOrders() {
+    public List<Orders> getAllOrders() throws Exception {
         return OrdersDAO.getAllOrders();
     }
 
     @GET
     @Path("/{orderId}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public Orders getOrders(@PathParam("orderId") String orderId) {
-        return OrdersDAO.getOrders(orderId);
+    public Orders getOrders(@PathParam("orderId") String orderId) throws Exception {
+            return OrdersDAO.getOrders(orderId);
     }
 
     @POST
@@ -46,12 +38,14 @@ public class OrdersService {
     @DELETE
     @Path("/{orderId}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public void deleteOrders(@PathParam("orderId") String orderNo) {
-        try {
-            OrdersDAO.deleteOrders(orderNo);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void deleteOrders(@PathParam("orderId") String orderId) {
+        OrdersDAO.deleteOrders(orderId);
+    }
+
+    @DELETE
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    public void deleteOrders() {
+        OrdersDAO.deleteAllOrders();
     }
 
 }
