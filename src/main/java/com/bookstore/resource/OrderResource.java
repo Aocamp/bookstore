@@ -1,4 +1,4 @@
-package com.bookstore.service;
+package com.bookstore.resource;
 import java.util.List;
 
 import javax.ws.rs.*;
