@@ -3,6 +3,7 @@ package com.bookstore.model;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Date;
 
 @XmlRootElement(name = "ordersList")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -53,6 +54,14 @@ public class Orders {
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
-
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", clientId='" + clientId + '\'' +
+                ", bookId=" + bookId +
+                ", orderDate=" + orderDate +
+                '}';
+    }
 }
 
